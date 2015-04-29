@@ -1,5 +1,8 @@
 package banco.conta;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,30 +10,28 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import static org.junit.Assert.*;
+import banco.conta.aluno.Conta;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public abstract class AbsTesteIConta {
-	
-	public abstract IConta getInstance(int numeroConta, float saldoInicial);
+public class TesteConta {
 	
 	@Test
 	public void testGetNumeroConta() {
-		IConta conta = getInstance(7685, 100.0f);
+		Conta conta = new Conta(7685, 100.0f);
 		
 		assertTrue(conta.getNumeroConta() == 7685);
 	}
 	
 	@Test
 	public void testSaldo() {
-		IConta conta = getInstance(7685, 100.0f);
+		Conta conta = new Conta(7685, 100.0f);
 		
 		assertTrue(conta.getSaldo() == 100.0);
 	}
 	
 	@Test
 	public void testDeposito() {
-		IConta conta = getInstance(7685, 100.0f);
+		Conta conta = new Conta(7685, 100.0f);
 		
 		assertFalse(conta.depositar(-10));
 		assertTrue(conta.depositar(10));
@@ -38,7 +39,7 @@ public abstract class AbsTesteIConta {
 	
 	@Test
 	public void testSacar() {
-		IConta conta = getInstance(7685, 100.0f);
+		Conta conta = new Conta(7685, 100.0f);
 		
 		assertFalse(conta.sacar(-1));
 		assertFalse(conta.sacar(101));
@@ -47,7 +48,7 @@ public abstract class AbsTesteIConta {
 	
 	@Test
 	public void testGetExtrato() {
-		IConta conta = getInstance(7685, 100.0f);
+		Conta conta = new Conta(7685, 100.0f);
 
 		assertFalse(conta.sacar(-50));
 		assertTrue(conta.sacar(50));
