@@ -1,7 +1,6 @@
-package banco.conta;
+package cliente;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import banco.conta.aluno.Conta;
+import aluno.Conta;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TesteConta {

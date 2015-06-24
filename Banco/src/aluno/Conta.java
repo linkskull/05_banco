@@ -1,4 +1,4 @@
-package banco.conta.aluno;
+package aluno;
 
 import java.util.List;
 
